@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings
+from pydantic import PostgresDsn
 
 
 class Settings(BaseSettings):
@@ -8,6 +9,13 @@ class Settings(BaseSettings):
 
     # router
     api_prefix: str = "/api"
+
+    # db
+    db_url: PostgresDsn
+    echo: bool = False
+    echo_pool: bool = False
+    pool_size: int = 50
+    max_overflow: int = 10
 
 
 settings = Settings()
