@@ -15,7 +15,7 @@ router = APIRouter(
 
 
 @router.get("/", response_model=list[OwnerReadSchema])
-async def get_users(session: AsyncSession = Depends(db_helper.session_getter)) -> Sequence[Owner]:
+async def get_users(session: AsyncSession = Depends(db_helper.session_getter)):
     stmt = select(Owner).order_by(Owner.id)
     result = await session.scalars(stmt)
     return result.all()

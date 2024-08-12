@@ -11,6 +11,7 @@ from crud import router as crud_router
 async def lifespan(app: FastAPI):
     # startup
     yield
+
     # shutdown
     await db_helper.dispose()
 
