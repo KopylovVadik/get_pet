@@ -1,9 +1,23 @@
+from contextlib import asynccontextmanager
+
 import uvicorn
 from fastapi import FastAPI
 from fastapi import APIRouter
 from config import settings
+from database import db_helper
 
-app = FastAPI()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # startup
+    yield
+    # shutdown
+    await db_helper.dispose()
+
+
+app = FastAPI(
+    lifespan=lifespan,
+)
 router = APIRouter()
 app.include_router(router, prefix=settings.api_prefix)
 
