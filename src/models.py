@@ -1,5 +1,5 @@
 from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy import Column, String, Integer, DateTime, Date, func, ForeignKey
+from sqlalchemy import Column, String, Integer, DateTime, Date, func, ForeignKey, MetaData
 
 
 class Base(DeclarativeBase):
