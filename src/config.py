@@ -1,5 +1,6 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import PostgresDsn
+from pydantic_settings import BaseSettings
+from pydantic_settings import SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -11,7 +12,7 @@ class Settings(BaseSettings):
 
     # run
     host: str = "0.0.0.0"
-    port: int = 8080
+    port: int = 8081
 
     # router
     api_prefix: str = "/api"

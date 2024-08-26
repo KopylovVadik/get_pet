@@ -1,10 +1,12 @@
 from contextlib import asynccontextmanager
 
 import uvicorn
+
 from fastapi import FastAPI
+
 from config import settings
-from database import db_helper
 from crud import router as crud_router
+from database import db_helper
 
 
 @asynccontextmanager

@@ -1,5 +1,12 @@
+from sqlalchemy import Column
+from sqlalchemy import Date
+from sqlalchemy import DateTime
+from sqlalchemy import ForeignKey
+from sqlalchemy import Integer
+from sqlalchemy import MetaData
+from sqlalchemy import String
+from sqlalchemy import func
 from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy import Column, String, Integer, DateTime, Date, func, ForeignKey, MetaData
 
 
 class Base(DeclarativeBase):
