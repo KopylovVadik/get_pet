@@ -25,6 +25,9 @@ class Base(DeclarativeBase):
 
 class Owner(Base):
     __tablename__ = 'owners'
+
+    pk = 'id'
+
     id = Column(Integer, primary_key=True, unique=True)
     first_name = Column(String, comment='Имя')
     last_name = Column(String, comment='Фамилия')
@@ -36,6 +39,8 @@ class Owner(Base):
 
 class Pet(Base):
     __tablename__ = 'pets'
+
+    pk = 'id'
 
     id = Column(Integer, primary_key=True, unique=True)
     name = Column(String, comment='Кличка')
